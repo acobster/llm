@@ -1,10 +1,10 @@
 (ns messaging-app.core
-  (:require [reagent.core :as r]
+  (:require [messaging-app.react-native-deps]  ;; Load React deps first
+            [reagent.core :as r]
             [re-frame.core :as rf]
             [messaging-app.events]
             [messaging-app.subs]
             [messaging-app.views :as views]
-            [messaging-app.react-native-deps]
             ["react-native" :as rn]))
 
 (defn app-root []
