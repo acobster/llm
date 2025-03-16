@@ -8,6 +8,7 @@
   {:target :react-native
    :init-fn env.dev.main/init
    :output-dir "target/dev"
+   :js-options {:js-provider :shadow}
    :devtools {:autoload true
               :preloads [shadow.expo.keep-awake]}}
 
@@ -15,10 +16,17 @@
   {:target :react-native
    :init-fn env.ios.main/init
    :output-dir "target/ios"
+   :js-options {:js-provider :shadow}
    :release {:output-to "index.ios.js"}}
 
   :android
   {:target :react-native
    :init-fn env.android.main/init
    :output-dir "target/android"
-   :release {:output-to "index.android.js"}}}}
+   :js-options {:js-provider :shadow}
+   :release {:output-to "index.android.js"}}}
+ 
+ :npm-deps {:react "18.2.0"
+            :react-native "0.71.4"}
+ 
+ :dev-http {8080 "target/dev"}}
