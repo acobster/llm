@@ -1,10 +1,12 @@
 (ns env.dev.main
   (:require [messaging-app.core :as core]
-            [figwheel.client :as figwheel :include-macros true]))
+            [figwheel.main.api :as figwheel]))
 
-(figwheel/watch-and-reload
- :websocket-url "ws://localhost:3449/figwheel-ws"
- :heads-up-display true
- :jsload-callback #(core/init))
+;; Figwheel-main doesn't require the same watch-and-reload setup
+;; as the older figwheel-sidecar did
 
 (core/init)
+
+;; Optionally add development-specific initialization here
+(defn on-jsload []
+  (core/init))

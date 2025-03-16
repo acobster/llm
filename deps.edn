@@ -1,0 +1,25 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}
+        org.clojure/clojurescript {:mvn/version "1.10.891"}
+        reagent/reagent {:mvn/version "1.1.1"}
+        re-frame/re-frame {:mvn/version "1.2.0"}}
+ 
+ :aliases
+ {:dev {:extra-paths ["env/dev"]
+        :extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.15"}
+                     com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
+                     cider/cider-nrepl {:mvn/version "0.28.5"}
+                     cider/piggieback {:mvn/version "0.5.2"}}
+        :main-opts ["-m" "figwheel.main" "-b" "dev" "-r"]}
+  
+  :build-ios {:main-opts ["-m" "cljs.main" 
+                          "--optimizations" "advanced"
+                          "--output-to" "index.ios.js"
+                          "--output-dir" "target/ios"
+                          "-c" "env.ios.main"]}
+  
+  :build-android {:main-opts ["-m" "cljs.main" 
+                              "--optimizations" "advanced"
+                              "--output-to" "index.android.js"
+                              "--output-dir" "target/android"
+                              "-c" "env.android.main"]}}}

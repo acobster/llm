@@ -1,0 +1,8 @@
+^{:watch-dirs ["src" "env/dev"]
+  :css-dirs ["resources/public/css"]
+  :auto-testing false}
+{:main env.dev.main
+ :output-to "target/dev/messaging.js"
+ :output-dir "target/dev"
+ :optimizations :none
+ :source-map true}
