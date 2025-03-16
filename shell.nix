@@ -10,6 +10,7 @@ pkgs.mkShell {
     pkgs.babashka
     pkgs.clojure
     pkgs.ollama
+    pkgs.yarn-berry
 
     pythonEnv
   ];
