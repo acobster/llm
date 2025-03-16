@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+main() {
+  if [[ -z $ANTHROPIC_API_KEY ]] ; then
+    read -s -p "Anthropic API key: " ANTHROPIC_API_KEY
+  fi
+  aider --anthropic-api-key $ANTHROPIC_API_KEY --model anthropic/claude-3-7-sonnet-latest
+}
+
+
+main
