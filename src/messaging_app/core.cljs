@@ -4,6 +4,7 @@
             [messaging-app.events]
             [messaging-app.subs]
             [messaging-app.views :as views]
+            [messaging-app.react-native-deps]
             ["react-native" :as rn]))
 
 (defn app-root []

@@ -26,6 +26,11 @@
    :js-options {:js-provider :shadow}
    :release {:output-to "index.android.js"}}}
  
+ :js-options {:resolve {"react" {:target :npm
+                                 :require "react"}
+                        "react-native" {:target :npm
+                                        :require "react-native"}}}
+ 
  :npm-deps {:react "18.2.0"
             :react-native "0.71.4"}
  
