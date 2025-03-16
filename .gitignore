@@ -1,6 +1,6 @@
-.direnv
-.envrc
-.nrepl-port
-.venv
-.aider*
-.env
+node_modules/
+target/
+.shadow-cljs/
+.cpcache/
+index.ios.js
+index.android.js

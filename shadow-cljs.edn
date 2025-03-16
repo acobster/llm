@@ -1,0 +1,24 @@
+{:source-paths ["src" "env/dev" "env/prod"]
+ 
+ :dependencies [[reagent "1.1.1"]
+                [re-frame "1.2.0"]]
+ 
+ :builds
+ {:dev
+  {:target :react-native
+   :init-fn env.dev.main/init
+   :output-dir "target/dev"
+   :devtools {:autoload true
+              :preloads [shadow.expo.keep-awake]}}
+  
+  :ios
+  {:target :react-native
+   :init-fn env.ios.main/init
+   :output-dir "target/ios"
+   :release {:output-to "index.ios.js"}}
+  
+  :android
+  {:target :react-native
+   :init-fn env.android.main/init
+   :output-dir "target/android"
+   :release {:output-to "index.android.js"}}}}

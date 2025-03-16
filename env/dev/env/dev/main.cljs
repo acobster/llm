@@ -1,12 +1,13 @@
 (ns env.dev.main
   (:require [messaging-app.core :as core]
-            [figwheel.main.api :as figwheel]))
+            [shadow.expo.keep-awake :refer [keep-awake]]))
 
-;; Figwheel-main doesn't require the same watch-and-reload setup
-;; as the older figwheel-sidecar did
+;; Shadow-cljs doesn't require the same watch-and-reload setup
+;; as figwheel did
 
-(core/init)
+(defn ^:dev/after-load on-reload []
+  (core/init))
 
-;; Optionally add development-specific initialization here
-(defn on-jsload []
+(defn init []
+  (keep-awake)
   (core/init))
